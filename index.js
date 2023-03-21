@@ -4,7 +4,7 @@ const difficulty = {
     2: 2,
     3: 1
 };
-let currentDifficulty = 3;
+let currentDifficulty = 1;
 
 for (let i = 1; i <= 8; i++) {
     imagePaths.push("(" + i + ").jpg");
