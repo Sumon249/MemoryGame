@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="failure-screen">
+        <div class = "failure-content">
+            <h1> Oops! You Lost</h1>
+            <button class = "failure-btn" onsubmit="startGame()">Try again</button>
+        </div>
+
+    </div>
+    <div class="victory-screen">
+        <div class="victory-content">
+            <h1 class = "victory-text">Hurray! You won</h1>
+            <button class = "victory-btn" onsubmit="startGame()">Proceed</button>
+        </div>
+    </div>
+    <h1 class = "heading">Match Them!</h1>
+
+    <div class="grid-container">
+        <div id = "image-grid">
+        </div>
+    </div>
+    <div class = "stats">
+        <div class = "timer-div">
+            <p class = "timer"></p>
+        </div>
+        <div class="start">
+            <button class = "start-btn" onclick = "startGame()">Start</button>
+        </div>
+        <div class = "score">
+            <p>100</p>
+        </div>
+    </div>
+
+
+
+    <script src = "index.js"></script>
+</body>
+</html>

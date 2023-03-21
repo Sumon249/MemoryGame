@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
+:root{
+    --color-primary-blue: #38A3A5;
+    --color-light-blue: #457B9D;
+    --color-beige: #F1FAEE;
+    --color-sea-green: #A8DADC;
+    --color-bg-green:#C7F9CC;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body, button{
+    font-family: "Climate Crisis";
+    
+    /* font-size: 30px; */
+}
+h1{
+    letter-spacing: 3px;
+
+}
+body{
+    background-color: var(--color-bg-green);
+}
+
+.heading{
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 4.5rem;
+    color: rgb(235, 92, 92);
+}
+.grid-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#image-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    place-content: center;
+    width: 30em;
+    min-width:20% ;
+    max-width: 70%;
+    /* height: 40%; */
+
+
+}
+.image-div{                                                                                             
+    /* border: 2px solid black; */
+    margin: 3px;
+    /* width: 90%; */
+
+}
+
+.image{
+    /* width: 40%; */
+    max-width: 100%;
+    display: block;
+    backface-visibility: hidden;
+}
+
+.gray{
+    /* transition: 0.3s ease-out;
+    backface-visibility: visible;
+
+    transform: translateX(-100%) rotateY(-180deg); */
+    filter:brightness(0) ;
+}
+
+.stats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 1rem 0 3rem 0;
+    color: rgb(235, 92, 92);
+
+    /* line-height: 10px; */
+
+}
+.stats div{
+    margin-inline: 10rem;
+}
+
+.timer-div{
+    width: 100px;
+}
+
+
+.start-btn{
+    padding: 1rem 4rem;
+    /* border-radius: 50px; */
+    border: none;
+    background-color: var(--color-primary-blue);
+    color: white;
+    font-size: 25px;
+    box-shadow: 8px 8px 0 0 #136365;
+}
+.start-btn:active{
+    box-shadow: none;
+   transform: scale(0.94)
+
+}
+
+.failure-screen{
+    display: none;
+    top:0;
+    right:0;
+    z-index: 10;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    font-size: 35px;
+    text-align: center;
+    background-color: #ff595e;
+}
+.failure-content, .victory-content{
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.failure-content *, .victory-content *{
+    margin: 20px 0;
+}
+.failure-btn, .victory-btn{
+    font-size: 25px;
+    background-color: #4ecdc4;
+    border: none;
+    color: #ffff;
+    padding: 10px 50px;
+    box-shadow: 4px 4px 0 0 #136365;
+
+}
+.failure-btn:active, .victory-btn:active{
+    box-shadow: none;
+   transform: scale(0.94)
+
+}
+
+.victory-screen{
+    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 11;
+
+    height: 100vh;
+    width: 100vw;
+    font-size: 35px;
+    text-align: center;
+    background-color: #C7F9CC;
+}
+.victory-content{
+    color:rgb(235, 92, 92);
+}
