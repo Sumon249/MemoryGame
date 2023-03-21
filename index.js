@@ -44,6 +44,7 @@ for (let i = 0; i < 16; i++) {
 
     let imageElement = document.createElement('img');
     imageElement.className = "image";
+    imageElement.classList.add("gray");
 
     imageElement.src = "Assets/" + randomImageList[i];
     imageDiv.appendChild(imageElement)
