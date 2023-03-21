@@ -55,7 +55,11 @@ body{
     /* width: 90%; */
 
 }
-
+.image:hover{
+    /* scale: 1.03; */
+    transition: 0.1s ease-out;
+    
+}
 .image{
     /* width: 40%; */
     max-width: 100%;

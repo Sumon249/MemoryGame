@@ -51,6 +51,11 @@ for (let i = 0; i < 16; i++) {
 }
 
 function showFailure(){
+    let audio = document.getElementById("audio");
+    let audioSrc = document.getElementById("audio-src");
+    audioSrc.src = "Assets/failure.mp3"
+    audio.load();
+    audio.play()
     const failureDiv = document.querySelector(".failure-screen");
     failureDiv.style.display = "block";
     const failureBtn = document.querySelector(".failure-btn");
@@ -64,13 +69,21 @@ function showFailure(){
 function showVictory(){
 
     matches = 0;
+    let audio = document.getElementById("audio");
+    let audioSrc = document.getElementById("audio-src");
 
     const victoryDiv = document.querySelector(".victory-screen");
     const victoryBtn = document.querySelector(".victory-btn");
     if(currentDifficulty < 3){
         currentDifficulty++;
+        audioSrc.src = "Assets/victory.mp3"
+        audio.load();
+        audio.play()
     }
     else{
+        audioSrc.src = "Assets/final.mp3"
+        audio.load();
+        audio.play()
         victoryText = document.querySelector(".victory-text");
         victoryText.innerHTML = "You completed the game!"
         victoryBtn.innerHTML = "Play again!"
@@ -192,6 +205,12 @@ function resetImages(){
 function startGame() {
     let failureScreen = document.querySelector(".failure-screen");
     failureScreen.style.display = "none";
+    let audio = document.getElementById("audio");
+    let audioSrc = document.getElementById("audio-src");
+
+    audioSrc.src = "Assets/theme.mp3"
+    audio.load();    
+    audio.play();
     let imageElements = document.querySelectorAll(".image");
     imageElements.forEach((item) => {
         item.classList.add("gray")
