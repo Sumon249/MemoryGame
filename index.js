@@ -5,6 +5,8 @@ const difficulty = {
     3: 1
 };
 let currentDifficulty = 1;
+const levelText = document.querySelector(".level");
+levelText.innerHTML = currentDifficulty;
 
 for (let i = 1; i <= 8; i++) {
     imagePaths.push("(" + i + ").jpg");
@@ -52,6 +54,9 @@ for (let i = 0; i < 16; i++) {
 }
 
 function showFailure(){
+    let imageElements = document.querySelectorAll(".image");
+
+
     let audio = document.getElementById("audio");
     let audioSrc = document.getElementById("audio-src");
     audioSrc.src = "Assets/failure.mp3"
@@ -61,6 +66,8 @@ function showFailure(){
     failureDiv.style.display = "block";
     const failureBtn = document.querySelector(".failure-btn");
     failureBtn.onclick = () =>{
+        let imageElements = document.querySelectorAll(".image");
+        imageElements.forEach(image => image.style.opacity = 1);
         failureDiv.style.display = "none";
         resetTimer();
     }
@@ -68,6 +75,7 @@ function showFailure(){
 }
 
 function showVictory(){
+
 
     matches = 0;
     let audio = document.getElementById("audio");
@@ -93,6 +101,8 @@ function showVictory(){
     victoryDiv.style.display = "block";
 
     victoryBtn.onclick = () =>{
+        let imageElements = document.querySelectorAll(".image");
+        imageElements.forEach(image => image.style.opacity = 1);
         victoryDiv.style.display = "none";
         resetTimer();
     }
@@ -155,6 +165,7 @@ let firstImage;
 let secondImage;
 let lockImages = false;
 let matches = 0;
+
 function revealImage() {
     if(lockImages)
         return;
@@ -184,6 +195,11 @@ function disableImages(){
     }
     firstImage.removeEventListener("click", revealImage);
     secondImage.removeEventListener("click", revealImage);
+
+    firstImage.style.opacity = 0;
+    secondImage.style.transition = "opacity 1.5s ease-out"
+    secondImage.style.opacity = 0;
+    console.log(firstImage);
     resetImages();
 }
 function grayImage(){
@@ -196,14 +212,18 @@ function grayImage(){
       }, 500);
 }
 function resetImages(){
+    
     grayed = true;
     lockImages = false;
     firstImage = null;
     secondImage = null;
+
 }
 
 
 function startGame() {
+
+
     let failureScreen = document.querySelector(".failure-screen");
     failureScreen.style.display = "none";
     let audio = document.getElementById("audio");
@@ -216,7 +236,7 @@ function startGame() {
     imageElements.forEach((item) => {
         item.classList.add("gray")
     })
-
+    imageElements.forEach(image => image.style.opacity = 1);
     const time = difficulty[currentDifficulty];
     let timerElement = document.querySelector(".timer");
     startTimer(timerElement, time * 60);

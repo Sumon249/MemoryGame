@@ -65,6 +65,7 @@ body{
     max-width: 100%;
     display: block;
     backface-visibility: hidden;
+    transition: opacity 1.5s ease-out;
 }
 
 .gray{
